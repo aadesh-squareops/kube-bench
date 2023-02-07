@@ -2,7 +2,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: kube-bench
+  name: kube-bench-eks
 spec:
   template:
     spec:
@@ -11,7 +11,7 @@ spec:
         - name: kube-bench
           # Push the image to your ECR and then refer to it here
           # image: <ID.dkr.ecr.region.amazonaws.com/aquasec/kube-bench:ref>
-          image: docker.io/aquasec/kube-bench:latest
+          image: 152742397097.dkr.ecr.us-east-2.amazonaws.com/k8s/kube-bench:latest
           # To send findings to AWS Security Hub, refer to `job-eks-asff.yaml` instead
           command:
             [
